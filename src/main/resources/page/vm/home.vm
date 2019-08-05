@@ -1,0 +1,18 @@
+<head>
+    <title></title>
+</head>
+<script src="http://hanlang.oss-cn-shanghai.aliyuncs.com/web/static/js/jquery-3.2.1.min.js"></script>
+<script src="http://hanlang.oss-cn-shanghai.aliyuncs.com/web/static/js/bootstrap-treeview.js"></script>
+<link href="http://hanlang.oss-cn-shanghai.aliyuncs.com/web/static/css/bootstrap.css" rel="stylesheet"></link>
+<body>
+<div>
+    <label id="recordShow">param/ret record</label>
+    <label id="recordVal"></label>
+    <button id="recordChange">switch</button>
+    <button id="recordClear">clear</button>
+</div>
+<div id="tree"></div>
+<script src="../static/myjs/catalogue.js"></script>
+
+</body>
+</html>

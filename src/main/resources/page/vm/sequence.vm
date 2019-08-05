@@ -1,0 +1,25 @@
+<html>
+<head>
+  <title></title>
+</head>
+
+<script src="http://hanlang.oss-cn-shanghai.aliyuncs.com/web/static/js/jquery-3.2.1.min.js"></script>
+<script src="http://hanlang.oss-cn-shanghai.aliyuncs.com/web/static/js/webfont.js"></script>
+<script src="http://hanlang.oss-cn-shanghai.aliyuncs.com/web/static/js/underscore-min.js"></script>
+<script src="http://hanlang.oss-cn-shanghai.aliyuncs.com/web/static/js/snap.svg-min.js"></script>
+<script src="http://hanlang.oss-cn-shanghai.aliyuncs.com/web/static/js/sequence-diagram-min.js"></script>
+
+<link href="http://hanlang.oss-cn-shanghai.aliyuncs.com/web/static/css/chart.css" rel="stylesheet"></link>
+
+<body>
+  <a href="node?id=${id}">dependency diagram</a>
+  <div id="sequence"></div>
+  <script src="../static/myjs/sequence.js"></script>
+  <script>
+    drawSequence("sequence", "${id}")
+  </script>
+<script>
+
+</script>
+</body>
+</html>

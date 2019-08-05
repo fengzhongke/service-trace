@@ -1,0 +1,22 @@
+<html>
+<head>
+  <title></title>
+</head>
+
+<script src="http://hanlang.oss-cn-shanghai.aliyuncs.com/web/static/js/jquery-3.2.1.min.js"></script>
+<script src="http://hanlang.oss-cn-shanghai.aliyuncs.com/web/static/js/g6.js"></script>
+<script src="http://hanlang.oss-cn-shanghai.aliyuncs.com/web/static/js/plugin.tool.tooltip.js"></script>
+<script src="http://hanlang.oss-cn-shanghai.aliyuncs.com/web/static/js/plugin.behaviour.analysis.js"></script>
+<link href="http://hanlang.oss-cn-shanghai.aliyuncs.com/web/static/css/chart.css" rel="stylesheet"></link>
+
+<body>
+  <div id="tree"></div>
+  <script src="../static/myjs/tree.js"></script>
+  <script>
+    drawScene("tree", "${id}")
+  </script>
+<script>
+
+</script>
+</body>
+</html>
