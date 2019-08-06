@@ -1,7 +1,6 @@
 package org.lang.sandbox;
 
 import com.alibaba.jvm.sandbox.api.annotation.Command;
-import com.google.gson.Gson;
 import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -11,6 +10,7 @@ import java.util.Map.Entry;
 import java.util.TreeMap;
 import java.util.concurrent.LinkedBlockingQueue;
 
+import org.lang.sandbox.io.ObjectSerializer;
 import org.lang.sandbox.model.NodeMeta;
 import org.lang.sandbox.model.StaticNode;
 import org.lang.sandbox.model.TreeNode;
@@ -32,7 +32,7 @@ public class ModuleDataHttp extends ModuleViewHttp{
     StaticNode node = intercepter.getScene(id);
     if (node != null) {
       ChartTreeElement element = ChartTreeElement.parse(node);
-      writer.write(new Gson().toJson(element));
+      writer.write(ObjectSerializer.getJsonStrValue(element));
     } else {
       writer.write("no result no record");
     }
@@ -49,7 +49,7 @@ public class ModuleDataHttp extends ModuleViewHttp{
     TreeNode node = intercepter.getNode(id);
     if (node != null) {
       ChartTreeElement element = ChartTreeElement.parse(node);
-      writer.write(new Gson().toJson(element));
+      writer.write(ObjectSerializer.getJsonStrValue(element));
     } else {
       writer.write("no result no record");
     }
@@ -118,6 +118,6 @@ public class ModuleDataHttp extends ModuleViewHttp{
         }
       }
     }
-    writer.write(new Gson().toJson(elements));
+    writer.write(ObjectSerializer.getJsonStrValue(elements));
   }
 }

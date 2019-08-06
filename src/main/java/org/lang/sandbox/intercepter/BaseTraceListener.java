@@ -4,7 +4,7 @@ import com.alibaba.jvm.sandbox.api.listener.ext.Advice;
 import com.alibaba.jvm.sandbox.api.listener.ext.AdviceListener;
 import com.alibaba.jvm.sandbox.api.listener.ext.EventWatcher;
 import com.alibaba.jvm.sandbox.api.resource.ModuleEventWatcher;
-import com.google.gson.Gson;
+import org.lang.sandbox.io.ObjectSerializer;
 
 
 public abstract class BaseTraceListener extends AdviceListener {
@@ -75,8 +75,13 @@ public abstract class BaseTraceListener extends AdviceListener {
         if(isErr){
             return advice.getThrowable().getClass() + "|" + advice.getThrowable().getMessage();
         }else{
-            return new Gson().toJson(advice.getReturnObj());
+            return getStrValue(advice.getReturnObj());
         }
+    }
+
+
+    protected String getStrValue(Object obj){
+        return ObjectSerializer.getStrValue(obj);
     }
 
     /**

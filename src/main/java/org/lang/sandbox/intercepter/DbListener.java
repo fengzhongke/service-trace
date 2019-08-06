@@ -5,7 +5,6 @@ import com.alibaba.jvm.sandbox.api.listener.ext.EventWatchBuilder;
 import com.alibaba.jvm.sandbox.api.listener.ext.EventWatchBuilder.PatternType;
 import com.alibaba.jvm.sandbox.api.listener.ext.EventWatcher;
 import com.alibaba.jvm.sandbox.api.resource.ModuleEventWatcher;
-import com.google.gson.Gson;
 
 import java.lang.reflect.Method;
 
@@ -47,7 +46,7 @@ public class DbListener extends BaseTraceListener {
         Object[] array = advice.getParameterArray();
         if (array != null && array.length > 2) {
             Object params = array[2];
-            return new Gson().toJson(params);
+            return getStrValue(params);
         }
         return null;
     }

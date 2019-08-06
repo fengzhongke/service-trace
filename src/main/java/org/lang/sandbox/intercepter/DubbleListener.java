@@ -5,7 +5,6 @@ import com.alibaba.jvm.sandbox.api.listener.ext.EventWatchBuilder;
 import com.alibaba.jvm.sandbox.api.listener.ext.EventWatchBuilder.PatternType;
 import com.alibaba.jvm.sandbox.api.listener.ext.EventWatcher;
 import com.alibaba.jvm.sandbox.api.resource.ModuleEventWatcher;
-import com.google.gson.Gson;
 
 import java.lang.reflect.Method;
 
@@ -61,9 +60,9 @@ public class DubbleListener extends BaseTraceListener {
     protected String getParams(Advice advice) {
         Object[] array = advice.getParameterArray();
         if (array != null && array.length > 1) {//consumer
-            return new Gson().toJson(array[2]);
+            return getStrValue(array[2]);
         } else if (array.length == 1) {//provider
-            return new Gson().toJson(getArguments(advice.getParameterArray()[0]));
+            return getStrValue(getArguments(advice.getParameterArray()[0]));
         }
         return null;
     }

@@ -2,9 +2,9 @@ package org.lang.sandbox;
 
 import com.alibaba.jvm.sandbox.api.annotation.Command;
 import com.alibaba.jvm.sandbox.api.http.Http;
-import com.google.gson.Gson;
 import org.lang.sandbox.intercepter.BaseTraceListener;
 import org.lang.sandbox.intercepter.ThreadCompressIntercepter;
+import org.lang.sandbox.io.ObjectSerializer;
 import org.lang.sandbox.web.StaticResResolver;
 import org.lang.sandbox.web.VmViewResolver;
 
@@ -67,7 +67,7 @@ public class ModuleViewHttp{
                      final PrintWriter writer) throws Exception {
     Map<String, Boolean> map = new HashMap<String, Boolean>();
     map.put("oldVal", BaseTraceListener.getRecord());
-    writer.println(new Gson().toJson(map));
+    writer.println(ObjectSerializer.getJsonStrValue(map));
   }
 
   @Command("change")
@@ -79,6 +79,6 @@ public class ModuleViewHttp{
     Map<String, Boolean> map = new HashMap<String, Boolean>();
     map.put("oldVal", record);
     map.put("newVal", newVal);
-    writer.println(new Gson().toJson(map));
+    writer.println(ObjectSerializer.getJsonStrValue(map));
   }
 }

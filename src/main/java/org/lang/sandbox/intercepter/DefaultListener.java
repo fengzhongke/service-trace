@@ -5,7 +5,6 @@ import com.alibaba.jvm.sandbox.api.listener.ext.EventWatchBuilder;
 import com.alibaba.jvm.sandbox.api.listener.ext.EventWatchBuilder.PatternType;
 import com.alibaba.jvm.sandbox.api.listener.ext.EventWatcher;
 import com.alibaba.jvm.sandbox.api.resource.ModuleEventWatcher;
-import com.google.gson.Gson;
 
 public class DefaultListener extends BaseTraceListener {
 
@@ -37,6 +36,6 @@ public class DefaultListener extends BaseTraceListener {
 
     @Override
     protected String getParams(Advice advice) {
-        return new Gson().toJson(advice.getParameterArray());
+        return getStrValue(advice.getParameterArray());
     }
 }

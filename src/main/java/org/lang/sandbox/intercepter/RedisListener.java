@@ -5,7 +5,6 @@ import com.alibaba.jvm.sandbox.api.listener.ext.EventWatchBuilder;
 import com.alibaba.jvm.sandbox.api.listener.ext.EventWatchBuilder.PatternType;
 import com.alibaba.jvm.sandbox.api.listener.ext.EventWatcher;
 import com.alibaba.jvm.sandbox.api.resource.ModuleEventWatcher;
-import com.google.gson.Gson;
 import org.apache.commons.lang.builder.ToStringBuilder;
 
 import java.util.Arrays;
@@ -36,7 +35,7 @@ public class RedisListener extends BaseTraceListener {
   protected String getParams(Advice advice) {
     String params = null;
     try{
-      params = new Gson().toJson(advice.getParameterArray());
+      params = getStrValue(advice.getParameterArray());
     }catch(Throwable t1){
       try{
         params = ToStringBuilder.reflectionToString(advice.getParameterArray());
