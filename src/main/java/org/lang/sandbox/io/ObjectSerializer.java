@@ -6,8 +6,7 @@ import com.google.gson.Gson;
 import java.util.Arrays;
 
 /**
- * @auther hanlang@mallcai.com
- * @date 2019-08-06 12:01
+ * @author nkhanlang@163.com
  */
 public class ObjectSerializer {
 
