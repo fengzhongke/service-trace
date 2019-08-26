@@ -108,14 +108,14 @@ public class StaticNode extends NodeMeta {
   }
 
   public static void main(String[] args) throws IOException {
-    Pattern ptn = Pattern.compile("com\\.mallcai\\..*((Controller)|(Service(Impl)?))");
+    Pattern ptn = Pattern.compile("com\\..*((Controller)|(Service(Impl)?))");
     System.out.println(
-        ptn.matcher("com.mallcai.mgr.active.fullreduction.controller.FullReductionController")
+        ptn.matcher("TestController")
             .find());
     System.out
-        .println(ptn.matcher("com.mallcai.mgr.active.fullreduction.controller.FullService").find());
+        .println(ptn.matcher("TestService").find());
     System.out.println(
-        ptn.matcher("com.mallcai.mgr.active.fullreduction.controller.FullServiceImpl").find());
+        ptn.matcher("TestServiceImpl").find());
   }
 
 }
